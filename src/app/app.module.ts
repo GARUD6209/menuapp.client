@@ -8,11 +8,12 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { LayoutModule } from './layout/layout.module';
-import { AuthModule } from './features/auth/auth.module';
+import { HomeModule } from './features/home/home.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -21,7 +22,8 @@ import { AuthModule } from './features/auth/auth.module';
     AppRoutingModule,
     CoreModule,
     SharedModule,
-    LayoutModule
+    LayoutModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

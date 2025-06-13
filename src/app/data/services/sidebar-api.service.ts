@@ -22,14 +22,15 @@ export class SidebarApiService {
         role: 'admin',
         icon: 'admin_panel_settings',
         submenus: [
-          { id: 441,
-          main_menuid: 4,
-          status: 'Active',
-          active: true,
-          sub_menu_name: 'Admin Profile',
-          path: 'admin',
-          role: 'admin',
-          icon: 'supervisor_account'
+          {
+            id: 441,
+            main_menuid: 4,
+            status: 'Active',
+            active: true,
+            sub_menu_name: 'Admin Profile',
+            path: '/admin/profile',
+            role: 'admin',
+            icon: 'supervisor_account'
           },
           {
             id: 31,
@@ -114,8 +115,8 @@ export class SidebarApiService {
             main_menuid: 5,
             status: 'Active',
             active: true,
-            sub_menu_name: 'Manager Home',
-            path: '/manager',
+            sub_menu_name: 'Manager Profile',
+            path: '/manager/profile',
             role: 'manager',
             icon: 'home'
           },
@@ -192,8 +193,8 @@ export class SidebarApiService {
             main_menuid: 7,
             status: 'Active',
             active: true,
-            sub_menu_name: 'User Home',
-            path: '/user',
+            sub_menu_name: 'User Profile',
+            path: '/user/profile',
             role: 'user',
             icon: 'home'
           },

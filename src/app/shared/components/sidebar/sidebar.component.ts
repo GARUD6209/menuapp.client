@@ -1,33 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NavigationEnd, NavigationError, NavigationStart, Router, RouterModule } from '@angular/router';
-
-
-import { CommonModule } from '@angular/common';
-import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatButtonModule } from '@angular/material/button';
-import { Pipe, PipeTransform } from '@angular/core';
-import { MatExpansionModule } from '@angular/material/expansion';
+import { NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { SidebarApiService } from '../../../data/services/sidebar-api.service';
 import { AuthService } from '../../../core/services/auth.service';
 import { FilterNoSubmenusPipe } from '../../pipes/filter-no-submenus.pipe';
 import { FilterWithSubmenusPipe } from '../../pipes/filter-with-submenus.pipe';
 import { MainMenu } from '../../../data/models/menu.model';
-
-
-
-
-
-
-
-
-
-// Filter pipe for menus without submenus
-
 
 @Component({
   selector: 'app-sidebar',

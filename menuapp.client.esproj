@@ -8,11 +8,10 @@
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist\menuapp.client\browser\</BuildOutputFolder>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="src\app\components\nav-bar\**" />
-    <TypeScriptConfiguration Remove="src\app\components\nav-bar\**" />
+    <None Remove="src\app\components\**" />
+    <TypeScriptConfiguration Remove="src\app\components\**" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="src\app\components\" />
     <Folder Include="src\app\layout\" />
   </ItemGroup>
 </Project>

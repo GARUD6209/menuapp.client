@@ -9,23 +9,18 @@
     <mat-nav-list>
 
       <!-- Simple Menu Items (no children) -->
-      <a *ngFor="let menu of menus | filterNoSubmenus"
-         mat-list-item
-         [routerLink]="menu.path"
-         routerLinkActive="active-menu-item"
-         [routerLinkActiveOptions]="{ exact: true }">
+      <a *ngFor="let menu of menus | filterNoSubmenus" mat-list-item [routerLink]="menu.path"
+        routerLinkActive="active-menu-item" [routerLinkActiveOptions]="{ exact: true }">
         <mat-icon class="menu-icon">{{ menu.icon }}</mat-icon>
         <span class="menu-text">{{ menu.menu_name }}</span>
       </a>
 
       <!-- Expandable Menu Groups -->
-      <mat-expansion-panel *ngFor="let menu of menus | filterWithSubmenus"
-                           class="mat-elevation-z0 menu-expansion-panel"
-                           [expanded]="expandedMenus[menu.id]">
+      <mat-expansion-panel *ngFor="let menu of menus | filterWithSubmenus" class="mat-elevation-z0 menu-expansion-panel"
+        [expanded]="expandedMenus[menu.id]">
 
         <!-- Group Header -->
-        <mat-expansion-panel-header class="menu-group-header"
-                                    (click)="toggleMenuExpansion(menu.id, $event)">
+        <mat-expansion-panel-header class="menu-group-header" (click)="toggleMenuExpansion(menu.id, $event)">
           <mat-panel-title>
             <mat-icon class="menu-icon">{{ menu.icon }}</mat-icon>
             <span class="menu-text">{{ menu.menu_name }}</span>
@@ -34,11 +29,8 @@
 
         <!-- Submenu Items -->
         <div class="submenu-container">
-          <a *ngFor="let submenu of menu.submenus"
-             mat-list-item
-             [routerLink]="submenu.path"
-             routerLinkActive="active-menu-item"
-             class="submenu-item">
+          <a *ngFor="let submenu of menu.submenus" mat-list-item [routerLink]="submenu.path"
+            routerLinkActive="active-menu-item" class="submenu-item">
             <mat-icon class="submenu-icon">{{ submenu.icon }}</mat-icon>
             <span class="submenu-text">{{ submenu.sub_menu_name }}</span>
           </a>

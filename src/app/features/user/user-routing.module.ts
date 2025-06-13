@@ -4,8 +4,10 @@ import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.co
 import { UserComponent } from './pages/user-dashboard/user.component';
 
 
+
 const routes: Routes = [
-  { path: '', component: UserComponent }
+  { path: '', component: UserDashboardComponent },
+  { path: 'profile', component: UserComponent }
 ];
 
 @NgModule({

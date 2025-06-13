@@ -6,18 +6,17 @@ import { MainLayoutComponent } from './layout/main-layout/main-layout.component'
 import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
 import { NotAuthorizedComponent } from './features/auth/pages/not-authorized.component';
 
+
 const routes: Routes = [
   {
     path: '',
     component: MainLayoutComponent,
     canActivate: [AuthGuard],
     children: [
-      // {
-      //   path: '',
-      //   loadChildren: () => import('./features/admin/admin.module').then(m => m.AdminModule),
-      //   canActivate: [AuthGuard, RoleGuard],
-      //   data: { roles: ['admin'] }
-      // },
+      {
+        path: '',
+        loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule)
+      },
       {
         path: 'admin',
         loadChildren: () => import('./features/admin/admin.module').then(m => m.AdminModule),
