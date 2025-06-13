@@ -4,8 +4,16 @@ import { ManagerComponent } from './pages/manager-dashboard/manager.component';
 import { ManagerDashboardComponent } from './pages/manager-dashboard/manager-dashboard.component';
 
 const routes: Routes = [
-  { path: '', component: ManagerDashboardComponent },
-  { path: 'profile', component: ManagerComponent }
+  {
+    path: '',
+    component: ManagerDashboardComponent,
+    data: { breadcrumb: 'Dashboard' }
+  },
+  {
+    path: 'profile',
+    component: ManagerComponent,
+    data: { breadcrumb: 'Profile' }
+  },
 ];
 
 @NgModule({

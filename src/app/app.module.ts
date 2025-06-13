@@ -9,7 +9,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { LayoutModule } from './layout/layout.module';
 import { HomeModule } from './features/home/home.module';
-
+import { BreadcrumbModule } from 'angular-crumbs';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +23,10 @@ import { HomeModule } from './features/home/home.module';
     CoreModule,
     SharedModule,
     LayoutModule,
-    HomeModule
+    HomeModule,
+
+    //breadCrumbs
+
   ],
   providers: [],
   bootstrap: [AppComponent]

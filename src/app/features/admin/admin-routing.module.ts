@@ -5,10 +5,18 @@ import { AdminComponent } from './pages/admin-dashboard/admin.component';
 
 
 const routes: Routes = [
-  { path: '', component: AdminDashboardComponent },
+  {
+    path: '',
+    component: AdminDashboardComponent,
+    data: { breadcrumb: 'Dashboard' }
+  },
   { path: 'logs', component: AdminDashboardComponent }, // Update with actual logs component
   { path: 'settings', component: AdminDashboardComponent }, // Update with actual settings component
-  { path: 'profile', component: AdminComponent }
+  {
+    path: 'profile',
+    component: AdminComponent,
+    data: { breadcrumb: 'Profile' }
+  }
 ];
 
 @NgModule({

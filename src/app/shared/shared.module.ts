@@ -11,10 +11,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { FilterWithSubmenusPipe } from './pipes/filter-with-submenus.pipe';
 import { FilterNoSubmenusPipe } from './pipes/filter-no-submenus.pipe';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { CustomBreadcrumbComponent } from './components/custom-breadcrumb/custom-breadcrumb.component';
 
 @NgModule({
   declarations: [
     SidebarComponent,
+    CustomBreadcrumbComponent,
 
   ],
   imports: [
@@ -40,6 +42,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     SidebarComponent,
     FilterWithSubmenusPipe,
     FilterNoSubmenusPipe,
+    CustomBreadcrumbComponent,
     // Export other shared components/directives/pipes
   ]
 })

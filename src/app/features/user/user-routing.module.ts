@@ -6,8 +6,16 @@ import { UserComponent } from './pages/user-dashboard/user.component';
 
 
 const routes: Routes = [
-  { path: '', component: UserDashboardComponent },
-  { path: 'profile', component: UserComponent }
+  {
+    path: '',
+    component: UserDashboardComponent,
+    data: { breadcrumb: 'Dashboard' }
+  },
+  {
+    path: 'profile',
+    component: UserComponent,
+    data: { breadcrumb: 'Profile' }
+  }
 ];
 
 @NgModule({

@@ -1,0 +1,12 @@
+<!-- src/app/shared/components/custom-breadcrumb/custom-breadcrumb.component.html -->
+<nav aria-label="breadcrumb" *ngIf="breadcrumbs.length > 0">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a [routerLink]="'/'">Home</a>
+        </li>
+        <li class="breadcrumb-item" *ngFor="let breadcrumb of breadcrumbs; let last = last" [class.active]="last">
+            <a *ngIf="!last" [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a>
+            <span *ngIf="last">{{ breadcrumb.label }}</span>
+        </li>
+    </ol>
+</nav>
