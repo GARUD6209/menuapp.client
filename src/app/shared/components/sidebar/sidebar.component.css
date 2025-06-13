@@ -1,0 +1,103 @@
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh; /* Full viewport height */
+  background-color: #f8f9fa;
+  overflow-y: auto; /* Allow scrolling within sidebar if content is tall */
+  z-index: 1000; /* Ensure it stays above other content */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: add subtle shadow */
+}
+
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.sidebar-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+/* Expansion Panel Customization */
+.menu-expansion-panel {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background-color: transparent;
+}
+
+  .menu-expansion-panel .mat-expansion-panel-body {
+    padding: 0;
+  }
+
+.menu-group-header {
+  padding: 0 16px;
+}
+
+.menu-icon, .submenu-icon {
+  margin-right: 16px;
+  color: #5f6368;
+}
+
+.menu-text, .submenu-text {
+  font-size: 14px;
+  color: #3c4043;
+}
+
+/* Submenu styling */
+.submenu-container {
+  padding-left: 8px;
+}
+
+.submenu-item {
+  padding-left: 40px !important;
+  height: 40px !important;
+  font-size: 13px;
+}
+
+/* Active menu highlighting */
+.active-menu-item {
+  background-color: rgba(25, 118, 210, 0.12) !important;
+  color: #1976d2 !important;
+  font-weight: 500;
+}
+
+  .active-menu-item .menu-icon,
+  .active-menu-item .submenu-icon {
+    color: #1976d2 !important;
+  }
+
+/* Footer area */
+.sidebar-footer {
+  border-top: 1px solid #e0e0e0;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f1f3f5;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-role {
+  margin-left: 8px;
+  text-transform: capitalize;
+  color: #5f6368;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+}
+
+/* Remove default padding */
+mat-nav-list {
+  padding: 0 !important;
+}

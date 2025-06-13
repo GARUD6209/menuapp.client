@@ -1,0 +1,49 @@
+/* Apply to body and html to prevent unwanted scrolling */
+:host {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Root container */
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* Fixed sidebar */
+.sidebar-container {
+  width: 260px;
+  height: 100vh;
+  flex-shrink: 0;
+  overflow-y: auto; /* Allow sidebar to scroll independently */
+  background-color: #f8f9fa;
+  border-right: 1px solid #e0e0e0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Scrollable main content */
+.content-container {
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto; /* Only content area scrolls */
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+  /* Ensure the scrollbar is always visible to prevent layout shifts */
+  .sidebar-container::-webkit-scrollbar,
+  .content-container::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .sidebar-container::-webkit-scrollbar-thumb,
+  .content-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }

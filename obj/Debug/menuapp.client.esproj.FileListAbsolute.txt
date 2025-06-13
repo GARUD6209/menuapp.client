@@ -1,0 +1,1 @@
+D:\.net_dev\MenuApp\menuapp.client\obj\Debug\menuapp.client.esproj.CoreCompileInputs.cache

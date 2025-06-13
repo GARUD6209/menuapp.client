@@ -1,0 +1,10 @@
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+mat-card {
+  min-width: 340px;
+}
