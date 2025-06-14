@@ -5,6 +5,7 @@ import { SharedModule } from '../shared/shared.module'; // Add this import
 
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
+import { BreadcrumbComponent, BreadcrumbItemDirective } from 'xng-breadcrumb';
 
 @NgModule({
   declarations: [

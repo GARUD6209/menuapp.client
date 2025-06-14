@@ -11,13 +11,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { FilterWithSubmenusPipe } from './pipes/filter-with-submenus.pipe';
 import { FilterNoSubmenusPipe } from './pipes/filter-no-submenus.pipe';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { CustomBreadcrumbComponent } from './components/custom-breadcrumb/custom-breadcrumb.component';
+import { BreadcrumbComponent, BreadcrumbItemDirective } from 'xng-breadcrumb';
 
 @NgModule({
   declarations: [
     SidebarComponent,
-    CustomBreadcrumbComponent,
-
   ],
   imports: [
     CommonModule,
@@ -28,22 +26,15 @@ import { CustomBreadcrumbComponent } from './components/custom-breadcrumb/custom
     MatProgressSpinnerModule,
     MatButtonModule,
     FilterWithSubmenusPipe,
-    MatListModule,
-    MatIconModule,
-    MatProgressSpinnerModule,
-    MatExpansionModule,
-    FilterWithSubmenusPipe,
     FilterNoSubmenusPipe,
-
-
-
+    BreadcrumbComponent,
+    BreadcrumbItemDirective
   ],
   exports: [
     SidebarComponent,
     FilterWithSubmenusPipe,
     FilterNoSubmenusPipe,
-    CustomBreadcrumbComponent,
-    // Export other shared components/directives/pipes
+    BreadcrumbComponent
   ]
 })
 export class SharedModule { }

@@ -9,7 +9,8 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { LayoutModule } from './layout/layout.module';
 import { HomeModule } from './features/home/home.module';
-import { BreadcrumbModule } from 'angular-crumbs';
+import { BreadcrumbComponent, BreadcrumbItemDirective } from 'xng-breadcrumb';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { BreadcrumbModule } from 'angular-crumbs';
     SharedModule,
     LayoutModule,
     HomeModule,
+    BreadcrumbComponent
 
     //breadCrumbs
 
