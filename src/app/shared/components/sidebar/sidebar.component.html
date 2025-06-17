@@ -1,53 +1,59 @@
 <div class="sidebar-container">
   <!-- Loading spinner -->
-  <div *ngIf="loading" class="sidebar-loading">
+  <div *ngIf="loading" class="sidebar-loading" role="status" aria-label="Loading navigation">
     <mat-progress-spinner diameter="40"></mat-progress-spinner>
+    <span class="sr-only">Loading...</span>
   </div>
 
   <!-- Main sidebar content -->
-  <div *ngIf="!loading" class="sidebar-content">
+  <nav *ngIf="!loading" class="sidebar-content" role="navigation" aria-label="Main navigation">
     <mat-nav-list>
 
       <!-- Simple Menu Items (no children) -->
-      <a *ngFor="let menu of menus | filterNoSubmenus" mat-list-item [routerLink]="menu.path"
-        routerLinkActive="active-menu-item" [routerLinkActiveOptions]="{ exact: true }">
-        <mat-icon class="menu-icon">{{ menu.icon }}</mat-icon>
-        <span class="menu-text">{{ menu.menu_name }}</span>
+      <a *ngFor="let menu of getMenusWithoutSubmenus()" mat-list-item [routerLink]="menu.path"
+        routerLinkActive="active-menu-item" [routerLinkActiveOptions]="{ exact: true }"
+        [attr.aria-label]="menu.menuName">
+        <mat-icon class="menu-icon" [attr.aria-hidden]="true">{{ menu.icon }}</mat-icon>
+        <span class="menu-text">{{ menu.menuName }}</span>
       </a>
 
       <!-- Expandable Menu Groups -->
-      <mat-expansion-panel *ngFor="let menu of menus | filterWithSubmenus" class="mat-elevation-z0 menu-expansion-panel"
-        [expanded]="expandedMenus[menu.id]">
+      <div *ngFor="let menu of getMenusWithSubmenus()" class="menu-group">
+        <mat-expansion-panel class="mat-elevation-z0 menu-expansion-panel" [expanded]="expandedMenus[menu.id]"
+          [attr.aria-label]="menu.menuName + ' menu group'">
 
-        <!-- Group Header -->
-        <mat-expansion-panel-header class="menu-group-header" (click)="toggleMenuExpansion(menu.id, $event)">
-          <mat-panel-title>
-            <mat-icon class="menu-icon">{{ menu.icon }}</mat-icon>
-            <span class="menu-text">{{ menu.menu_name }}</span>
-          </mat-panel-title>
-        </mat-expansion-panel-header>
+          <!-- Group Header -->
+          <mat-expansion-panel-header class="menu-group-header" (click)="toggleMenuExpansion(menu.id, $event)"
+            [attr.aria-expanded]="expandedMenus[menu.id]">
+            <mat-panel-title>
+              <mat-icon class="menu-icon" [attr.aria-hidden]="true">{{ menu.icon }}</mat-icon>
+              <span class="menu-text">{{ menu.menuName }}</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
 
-        <!-- Submenu Items -->
-        <div class="submenu-container">
-          <a *ngFor="let submenu of menu.submenus" mat-list-item [routerLink]="submenu.path"
-            routerLinkActive="active-menu-item" class="submenu-item">
-            <mat-icon class="submenu-icon">{{ submenu.icon }}</mat-icon>
-            <span class="submenu-text">{{ submenu.sub_menu_name }}</span>
-          </a>
-        </div>
-      </mat-expansion-panel>
+          <!-- Submenu Items -->
+          <div class="submenu-container" role="menu" [attr.aria-label]="menu.menuName + ' submenu'">
+            <a *ngFor="let submenu of menu.subMenus" mat-list-item [routerLink]="submenu.path"
+              routerLinkActive="active-menu-item" class="submenu-item" role="menuitem"
+              [attr.aria-label]="submenu.subMenuName">
+              <mat-icon class="submenu-icon" [attr.aria-hidden]="true">{{ submenu.icon }}</mat-icon>
+              <span class="submenu-text">{{ submenu.subMenuName }}</span>
+            </a>
+          </div>
+        </mat-expansion-panel>
+      </div>
     </mat-nav-list>
-  </div>
+  </nav>
 
   <!-- User info and logout -->
-  <div class="sidebar-footer">
-    <div class="user-info">
-      <mat-icon>person</mat-icon>
+  <footer class="sidebar-footer">
+    <div class="user-info" [attr.aria-label]="'Current user role: ' + getRole()">
+      <mat-icon [attr.aria-hidden]="true">person</mat-icon>
       <span class="user-role">{{ getRole() }}</span>
     </div>
-    <button mat-button color="warn" (click)="logout()" class="logout-button">
-      <mat-icon>logout</mat-icon>
+    <button mat-button color="warn" (click)="logout()" class="logout-button" aria-label="Logout from application">
+      <mat-icon [attr.aria-hidden]="true">logout</mat-icon>
       <span>Logout</span>
     </button>
-  </div>
+  </footer>
 </div>
