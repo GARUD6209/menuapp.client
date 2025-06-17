@@ -1,9 +1,10 @@
+// menu.model.ts
 export interface SubMenu {
     id: number;
-    main_menuid: number;
-    status: string;
+    mainMenuId: number;  // Changed from main_menuid
+    status: boolean;     // Changed from string to boolean
     active: boolean;
-    sub_menu_name: string;
+    subMenuName: string; // Changed from sub_menu_name
     path: string;
     role: string;
     icon?: string;
@@ -11,12 +12,12 @@ export interface SubMenu {
 
 export interface MainMenu {
     id: number;
-    menu_name: string;
+    menuName: string;    // Changed from menu_name
     module: string;
-    status: string;
+    status: boolean;     // Changed from string to boolean
     active: boolean;
     path: string;
     role: string;
     icon?: string;
-    submenus?: SubMenu[];
+    subMenus?: SubMenu[]; // Changed from submenus to subMenus (capital M)
 }
