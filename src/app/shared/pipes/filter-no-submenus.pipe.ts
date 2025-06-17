@@ -1,3 +1,4 @@
+// filter-no-submenus.pipe.ts
 import { Pipe, PipeTransform } from '@angular/core';
 import { MainMenu } from '../../data/models/menu.model';
 
@@ -7,6 +8,6 @@ import { MainMenu } from '../../data/models/menu.model';
 })
 export class FilterNoSubmenusPipe implements PipeTransform {
   transform(menus: MainMenu[]): MainMenu[] {
-    return menus.filter(menu => !menu.submenus || menu.submenus.length === 0);
+    return menus.filter(menu => !menu.subMenus || menu.subMenus.length === 0);
   }
 }
