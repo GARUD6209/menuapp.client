@@ -12,9 +12,8 @@ export class SidebarApiService extends BaseApiService {
   }
 
 
-
   getSidebarForUser(): Observable<MainMenu[]> {
-    return this.get<MainMenu[]>('/Menu');
+    return this.get<MainMenu[]>('/Menu/user-menu');
   }
 
   // Additional methods for menu management

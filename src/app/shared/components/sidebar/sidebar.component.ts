@@ -93,27 +93,29 @@ export class SidebarComponent implements OnInit, OnDestroy {
   private filterMenus(menus: MainMenu[], userRole: string | null): MainMenu[] {
     if (!userRole) return [];
 
-    return menus
-      .filter(menu =>
-        menu.status === true &&  // Changed from 'Active' to true
-        menu.active &&
-        !!menu.role &&
-        menu.role.split(',').map(r => r.trim()).includes(userRole)
-      )
-      .map(menu => ({
-        ...menu,
-        subMenus: (menu.subMenus || []).filter(sub =>
-          sub.status === true &&  // Changed from 'Active' to true
-          sub.active &&
-          !!sub.role &&
-          sub.role.split(',').map(r => r.trim()).includes(userRole)
-        )
-      }))
-      .filter(menu =>
-        !menu.subMenus ||
-        menu.subMenus.length > 0 ||
-        !menu.subMenus
-      );
+    return menus;
+    // .filter(menu =>
+    //   menu.status === true &&  // Changed from 'Active' to true
+    //   menu.active
+    //   &&
+    //   !!menu.role &&
+    //   menu.role.split(',').map(r => r.trim()).includes(userRole)
+    // )
+    // .map(menu => ({
+    //   ...menu,
+    //   subMenus: (menu.subMenus || []).filter(sub =>
+    //     sub.status === true &&  // Changed from 'Active' to true
+    //     sub.active
+    //     &&
+    //     !!sub.role &&
+    //     sub.role.split(',').map(r => r.trim()).includes(userRole)
+    //   )
+    // }))
+    // .filter(menu =>
+    //   !menu.subMenus ||
+    //   menu.subMenus.length > 0 ||
+    //   !menu.subMenus
+    // );
   }
 
   /**
