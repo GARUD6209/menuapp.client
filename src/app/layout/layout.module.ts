@@ -13,8 +13,6 @@ import { BreadcrumbComponent, BreadcrumbItemDirective } from 'xng-breadcrumb';
     AuthLayoutComponent
   ],
   imports: [
-    CommonModule,
-    RouterModule, // Import RouterModule to use router-outlet
     SharedModule  // Import SharedModule to use app-sidebar
   ],
   exports: [

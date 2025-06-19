@@ -12,6 +12,13 @@ import { FilterWithSubmenusPipe } from './pipes/filter-with-submenus.pipe';
 import { FilterNoSubmenusPipe } from './pipes/filter-no-submenus.pipe';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BreadcrumbComponent, BreadcrumbItemDirective } from 'xng-breadcrumb';
+import { MatCardModule } from '@angular/material/card';
+import { MatError, MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
 
 @NgModule({
   declarations: [
@@ -28,13 +35,38 @@ import { BreadcrumbComponent, BreadcrumbItemDirective } from 'xng-breadcrumb';
     FilterWithSubmenusPipe,
     FilterNoSubmenusPipe,
     BreadcrumbComponent,
-    BreadcrumbItemDirective
+    BreadcrumbItemDirective,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
+    MatError,
+
   ],
   exports: [
     SidebarComponent,
     FilterWithSubmenusPipe,
     FilterNoSubmenusPipe,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    CommonModule,
+    FormsModule,
+    RouterModule,
+    MatListModule,
+    MatIconModule,
+    MatExpansionModule,
+    MatProgressSpinnerModule,
+    MatButtonModule,
+    FilterWithSubmenusPipe,
+    FilterNoSubmenusPipe,
+    BreadcrumbComponent,
+    BreadcrumbItemDirective,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
+    MatError,
+
+
   ]
 })
 export class SharedModule { }
