@@ -15,3 +15,9 @@ export interface RegisterRequest {
     password: string;
     role: number;
 }
+
+export interface ResetPasswordRequest {
+    username: string;
+    oldPassword: string;
+    newPassword: string;
+}
