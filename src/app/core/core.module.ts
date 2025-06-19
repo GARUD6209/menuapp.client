@@ -12,7 +12,6 @@ import { AuthService } from './services/auth.service';
   ],
   providers: [
     AuthService,
-    // Add other singleton services here
   ],
   exports: []
 })
