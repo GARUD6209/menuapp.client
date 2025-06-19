@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { LoginRequest, LoginResponse, RegisterRequest } from '../models/user.model';
+import { LoginRequest, LoginResponse, RegisterRequest, ResetPasswordRequest } from '../models/user.model';
 
 
 
@@ -93,5 +93,24 @@ export class AuthService {
   getUserId(): number | null {
     const userId = localStorage.getItem('userId');
     return userId ? parseInt(userId, 10) : null;
+  }
+
+  resetPassword(resetRequest: ResetPasswordRequest): Observable<any> {
+    const url = 'https://localhost:7039/api/Auth/reset';
+    const token = localStorage.getItem('token');
+    resetRequest.username = localStorage.getItem('username') || ''; // Ensure username is set
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    if (token) {
+      console.log('[AuthService][Auth] Token found:', token ? token.substring(0, 10) + '...' : 'none');
+      headers = headers.set('Authorization', `Bearer ${token}`);
+    } else {
+      console.warn('[AuthService][Auth] No token found in localStorage.');
+    }
+
+    return this.http.post(url, resetRequest, { headers });
   }
 }
